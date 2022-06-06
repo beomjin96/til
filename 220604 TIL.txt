@@ -1,0 +1,54 @@
+오늘 배운 내용
+노마드코더 코코아톡 클론코딩
+#1.6 What is HTML
+
+
+# 웹페이지는 3가지 언어로 구성되어있다.
+1) HTML (Hyper Text Markup Language)
+2) CSS (Cascading Style Sheet)
+3) JavaScript
+
+웹사이트는 여러 content로 구성되어있다.
+브라우저는 멍청하기 때문에 우리가 content가 무엇인지(title, image, link, list 등..)
+어느 위치에 있는지를 알려줘야한다.
+이렇게 웹사이트에게 컨텐츠의 종류와 위치를 알려줄 때 필요한 것이 HTML이다.(구성 및 뼈대)
+
+#1.7 What is CSS
+HTML(skeleton): browser에게 웹사이트의 content가 "무엇"인지에 대해 알려주는 것
+ex) "Hey, browser. That's a title."
+CSS(muscles): browser에게 웹사이트의 그 content가 "어떻게 보여야"하는지에 대해 알려주는 것
+ex) "Hey, browser. The title should be green."
+
+#1.8 What is JavaScript 
+- 웹사이트는 2 or 3가지 종류의 Text(Language)로 구성되어있다.
+- 1 HTML(Hypertext Markup Language) - content 구조 정의 : title, image, text, link, list, sidebar, header..
+- 2 CSS(Cascading Style Sheets) - HTML과 같이 쓰이며, content가 어떻게 보여야하는지 정의
+- 3 Javascript - 동적 상호작용(interactivity)이 필요하면 사용, 복잡한 에니메이션
+
+#1.9 Recap
+HTML은 MARKUP, CONTENT 언어. CSS 는 DESIGN, STYLE 언어, JAVASCRIPT는 PROGRAMING 언어이다.
+
+#2.0 Our First HTML File
+파일과 폴더 이름은 항상 소문자로 작성한다.
+vsc에 파일들을 생성하기 전에 폴더를 열고 시작한다.
+파일 이름 뒤에 만들 파일의 형식을 입력한다. (html, css, mp4 등등)
+파일을 수정하고 반드시 저장을 해줘야 반영된다.
+html파일은 브라우저로 연다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
