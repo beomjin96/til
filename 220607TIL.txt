@@ -1,0 +1,203 @@
+오늘 배운 내용
+노마드코더 코코아톡 클론 코딩 강의
+#2.7 More Tags
+
+mdn : html, css, js 검색할때 사용함
+cite : 글씨체 기울임
+mark : 글씨 배경 색칠
+...
+태그를 한번에 바꾸고 싶으면 바꿀 위치 선택후 ctl+d
+
+mdn : 문서 한글화 지원
+
+태그는 암기하지말고 mdn에서 찾아볼것!
+
+#2.8 Form Tags 
+form안에서
+가장 중요한 것은 input이다.
+
+input은 self-closing 태그다
+input은 1개 혹은 여러개의 type을 가질 수 있다.
+type에 color text submit 등이 들어갈 수 있다.
+file에는 특정형태만을 요구할수 있다.
+accept =.png , img/* 이런식으로 가능
+
+disable은 클릭이 안되게하는 attribute이다.
+required는 아무것도 없을 시 제출이 안되게 하는 attribute이다.
+ㄴ form을 검증한다.
+minlength 최소 글자 수
+
+태그 작성법과 attribute를 어떻게 찾고 사용하는 지 아는게 중요하다
+
+#2.9 More Tags and IDs
+lable은 input과 함께 작동한다. (label이 input을 activate)
+lable 태그에 for=""
+input 태그에 id="" 에 완전 똑같은 벨류가 들어가야 함.
+
+(커서 동시 선택하고 싶을 때는, option 키)
+
+*핵심은 Id
+id는 body 안에 어떤 태그에든 넣을 수 있는 attribute임
+element당 하나의 id 만을 가질 수 있다 (고유식별자임, 중복된 id를 사용하면 doesn't work!)
+Why? CSS가 태그를 지정하여 꾸미기 위해서 ID가 필요하기 때문이다!
+
+#2.10 Semantic HTML
+Semantic HTML(document와 code를 명확하게 할 수 있도록 짜는게 좋다)
+div tag = division (박스라고 생각해도 됨) 아무런 값이 없는 단순한 box
+header tag = div 대체 태그 (head와 헷갈리지 않기. head는 보이지 않지만 header는 보인다)
+main tag = 내용을 의미하는 태그
+footer tag = 꼬릿말을 의미하는 태그
+span tag= 짧은 텍스트를 의미하는 태그
+
+#2.11 Recap
+- visul studio code는 코드 작성이 잘못되면 빨간색으로 나타내준다.
+- atrribute 값은 항상 "" 큰 따옴표 안에 작성한다.
+- 어떤 태그는 id라는 arrtribute를 가질 수 있다.ex) image, paragraph. header, link...
+- 반대로 src(source)라는 attribute는 모든 태그가 가질 수 있지 않다.
+- 코드 자체에 의미가 부여된 semantic 태그를 잊지 말자.ex) header, navigation, footer...
+- semantic 태그로 코드를 작성 하는 것은 매우 중요하다. 작성된 코드들이 훨씬 더 보기 좋고, 좋은
+프로그래머가 되기 위해서는 필수 사항이다.
+- header, main, footer, navigation, hgroup 등 <>속 태그들은 전부 container이다. 전부 div 태그로 대체 할 수 있다.
+- div 태그는 가장 통용적인 container이다. 대체가 가능하지만, 코드만 보고 어떤 의미인지 파악하기 위해서 semantic 태그를 쓰는 것이다.
+- 모든 태그를 암기 할 필요는 없다. 필요할 때마다 문서를 찾아 적용하면 된다.
+
+#3.0 How to Add CSS to HTML 
+- CSS를 HTML과 섞어내는 방법은 두 가지가 있다.
+- 1. 같은 HTML 파일에 HTML 코드와 CSS 코드를 놓는 방법
+- 2. CSS와 HTML을 분리시키는 방법
+- 같은 HTML 파일에 CSS 코드를 입히는 방법으로는 'style'태그를 이용한다.(이 때, head 안에 있어야 한다.)
+- CSS를 분리시켜 만들 때는 따로 CSS 파일을 만든다.ex) styles.css
+- HTML 파일에서 'link' 태그를 이용하여 CSS 파일과 연결한다.
+-
+- styles.css와 이 HTML과의 관계를 말할 때, styles.css는 스타일시트라 한다.
+- rel(relationship 관계)에 대해 명시해야 한다.
+
+#3.1 Writing Our First CSS Lines 
+ CSS가 하는 일은 HTML 태그를 가리키는 일. (이 태그는 초록색이다. 이 가리키는 것 자체를 'selector'
+- CSS 작성에선 띄어쓰기를 하지 않는다.
+- font-size:20px; 과 같이, 속성 다음 콜론(:), 값 다음 세미콜론(;)으로 닫아줘야 한다.
+
+속성이름:속성값;
+
+- 밑줄(_) 또는 슬래쉬(/)도 사용해선 안된다.
+- css 또한 어떤 값이든 쓸 수 있다. 하지만 속성에 맞는 값을 써야 브라우저에서 적용이 된다.
+- css 또한 모든 속성을 일일이 다 기억할 필요 없다. 기본적으로 어떻게 동작하는지만 기억하면 된다.
+
+동작 원리
+1. 태그를 지정
+2. 원하는 속성값을 쓴다.
+
+#3.2 What Does Cascading Mean
+### CSS 뜻과 작동 방식
+
+CSS : Cascading Style Sheet
+
+Cascading : 위에서 아래로 내려오는 이미지(폭포가 흐르는 것 떠올리기)
+
+어떤 것 다음에 어떤 것이 온다 이것이 cascading이 의미하는 바다.
+
+브라우저가 CSS 코드를 읽을 때 cascading 방식으로, 즉 위에 있는 코드부터 차례차례로 읽힌다.
+
+위에서 아래로 읽는다는 브라우저가 CSS를 읽는 방법을 아는게 가끔 유용하다.
+
+inline CSS와 external CSS 두 CSS 코드가 같은 대상을 가리키게 되면 어떻게 될까?
+
+→ 브라우저는 위에서 아래로 코드를 읽으므로 마지막에 있는 코드가 우리에게 보여지게 된다.
+
+가장 마지막으로 변경된 속성이 우리에게 보여진다.
+
+그래서 코드의 순서를 바꾸면 최종적으로 보여지는 모습이 달라진다.
+
+CSS는 위에서 아래로 작동한다. 결국 적용 되는 건 가장 마지막 코드다.
+
+#3.3 Blocks and Inlines
+div는 옆에 다른 div가 오지 않는다.
+span은 옆에 다른 span이 올 수 있다.
+link는 옆에 올 수 있다.
+p는 옆에 올 수 없다.
+옆에 다른 요소가 못 오는걸 block
+올 수 있는걸 inline라고 한다. (in the same line)
+inline의 대표적인 태그 span, link, img
+
+#3.4 Margin Part One
+## Block의 특징(margin, padding, border)
+
+block에서 inline으로 inline에서 block으로 바꾸는게 가능할까? → 가능하다
+
+이렇게 하는 걸 display 속성이라고 한다.
+
+기본적으로 span의 display 속성은 inline이다. 이걸 block으로 바꿔주면 span도 block이 된다.
+
+그렇다면 div를 inline으로 바꾸면 어떤 일이 일어날까? → div가 사라진다.
+
+이유는 어떤 요소가 inline이면 그 요소는 높이와 너비를 가질 수 없기 때문이다.
+
+높이와 너비가 없고 내용도 없기 때문에 사라져 보인다. 내용이 있으면 그 내용만큼의 크기를 가지고 보여지게 된다.
+
+inline은 높이와 너비가 없고, block은 높이와 너비가 있다.
+
+block의 엄청난 특징 3가지는 다음과 같다.
+
+브라우저는 요소들에게 원치 않아도 많은 style 속성을 준다.
+
+user agent stylesheet : 브라우저가 기본적으로 준 style 속성
+
+1. **margin : box의 border의 바깥에 있는 공간**
+2. padding
+3. border
+
+#3.5 Margin Part Two
+
+방향 설정 없이 margin 하나를 주면 사방에 전부 다 적용된다.
+두 개를 줄 경우 상하, 좌우 이다.
+네 개를 줄 경우 시계방향 순으로 적용된다. (상 우 하 좌)
+Collapsing margin 현상 (상하에서만 발생함)
+div margin이 body margin과 같을 때 발생하고 body 와 div margin은 하나로 취급된다.
+
+#3.6 Paddings and IDs
+
+- padding은 margin과 반대 개념이다.
+- padding은 box의 경계로부터 '안쪽'에 있는 공간이다.
+- 값의 개수에 따라 적용되는 방향은 margin과 동일하다.
+- 여러 div를 생성했을 때 'id'를 이용하여 div들을 구분할 수 있고, 각각 다른 속성을 적용시킬 수 있다.
+- CSS로 first div에 속성을 적용 시킬 땐, #first {}
+- 이는 body, span 등에서도 마찬가지다.
+- CSS 코드의 id명은 HTML 코드에서 썼던 id명과 같아야 한다.
+
+#3.7 Border
+
+- border는 보통 한 종류만 사용한다.
+- 적용 예시 → border: 2px solid black; 너비, 스타일, 색깔
+- '*'는 '전체'를 뜻한다.
+- border은 inline과 block 모두에 적용된다.
+
+#3.8 Classes
+
+- span은 inline이기 때문에 높이와 너비를 가질 수 없으며, 그래서 위, 아래에 margin을 가질 수 없다.
+- 하지만 padding은 사방에 가질 수 있다.
+- 이와 같은 상황에 margin을 위, 아래에 적용하고 싶다면, inline 요소를 block으로 바꿔줘야 한다.
+- 온점(.)은 class명이라는 뜻.
+- id⇒ #tomato는 id="tomato" class⇒ .tomato는 class="tomato"
+- id명과 다르게 class명은 유일할 필요가 없다. 여러 요소들이 같이 쓸 수 있다.
+- 와 같이 class 속에는 btn과 tomato를 연이어 넣어 각각 다른 class 속성을 동시에 부여할 수도 있다.
+
+
+
+
+
+
+두잇 웹개발 표준 html 부분
+1강부터 3강까지 학습
+
+
+
+하고싶은 말:
+항해를 나오고 나서 처음으로 추가적인 코멘트를 남긴다.
+아직 정확하게 나온건 아니지만 내일 매니저님과 상담이 잡혀있다. 그때 확실하게 나간다고 할 것 같다.
+항해에 대한 글은 추후에 따로 적을 예정이다. 후회는 되지만 공부하는 방향성을 얻었다고 생각한다.
+내가 항해 나올때 다짐했던 기본기를 확실하게 잡고 다시 부트캠프로 돌아가고 싶다.
+
+
+
+
+
