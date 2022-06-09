@@ -1,0 +1,179 @@
+코코아톡 챌린지
+• 오늘의 강의: 코코아 클론코딩 2.7 - 2.8
+• 오늘의 과제: 위의 강의를 시청하신 후, 아래 코드 챌린지를 제출하세요.
+• 제출기간: 익일 오전 6시까지
+Requirements:
+• label 태그를 사용하세요.
+• id 속성을 사용하세요.
+• 입력받는 모든 항목이 필수가 되도록 작성하세요.
+• 비밀번호는 최소 10자리 이상 입력받도록 작성하세요.
+
+내 코드
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Create An Account</h1>
+    <form>
+      <label for="first">First name</label>
+      <input id="first" type="text" placeholder="First name" required />
+      <br />
+      <label for="last">Last name</label
+      ><input id="last" type="text" placeholder="Last name" required />
+      <br />
+      <label for="mail">Email</label>
+      <input id="mail" type="email" placeholder="Email" required />
+      <br />
+      <label for="user">Username</label>
+      <input id="user" type="text" placeholder="Username" required />
+      <br />
+      <label for="pw">Password</label>
+      <input
+        id="pw"
+        type="password"
+        placeholder="Password"
+        minlength="10"
+        required
+      />
+      <br />
+      <label for="date">Birth date</label>
+      <input id="date" type="date" required />
+      <br />
+      <label for="range">How happy are you?</label>
+      <input id="range" type="range" required />
+      <br />
+      <label for="color">What is your fav.color</label>
+      <input id="color" type="color" required />
+      <br />
+      <input id="submit" type="submit" value="Create Account" />
+    </form>
+  </body>
+</html>
+
+제출 링크 : YouAreAwesomeBlueprint
+
+
+
+노마드코더 코코아톡 클론 코딩 강의
+
+#3.11 Flexbox Part Two
+
+- justify-content나 align-items의 default를 변경하기 위해선, 'flex-direction'을 수정하면 된다.
+- flex-direction에는 두 가지 속성, column과 row가 있다.
+- display를 flex로 했을 때 default는 row이다. 따라서 flex-direction: column;을 주면 주축과 교차축이 반전된다.
+- 원하는만큼 flex 부모-자식 엘리먼트를 만들어낼 수 있다.
+- flex-wrap: nowrap;을 통해 wrapping이 일어나지 않게 할 수 있다.
+- flexbox는 width값을 초기 사이즈로만 여기고, 모든 엘리먼트를 같은 줄에 있게 하기 위해 width를 바꾸기도 한다.
+- flex-direction: column-reverse; 밑에서 시작해서 위로 올라가게 한다.(마찬가지로 row-reverse도 있다.)
+- flex-wrap: wrap-reverse; 또한 있는데, 브라우저를 줄일 때, 엘리먼트가 겹쳐지는 위치가 역전된다.
+
+#3.12 Fixed
+
+position fixed를 이용하면 스크롤해도 항상 제자리에 머무른다.
+처음 만들어진 자리에 고정 되어있다. 하지만 top, left, right, bottom 중 하나만 수정해도 서로 다른 레이어에 위치하게되어 원래 위치가 무시된다.
+positon fixed를 이용하면 가장 위에 위치하게 된다. (맨 앞)
+position fixed => 초기 위치에 고정시켜줌. 다른 레이어 상에서 자리잡음.
+top, right, bottom, left => margin과 초기 위치 등이 무시되고 명령한 위치에 자리잡음
+
+#3.13 Relative Absolute 
+
+1. positon: static (default)
+2. position: fixed
+- element가 처음 생성된 자리에 고정.
+3. position: relative;
+- element가 '처음 생성된 위치'를 기준점으로, top bottom left right으로 위치를 조금씩 수정할 수 있다.
+4. position: absolute;
+가장 가까운 relative 부모를 기준으로 이동
+position:relative; 를 해주면 부모가 된다.
+없으면 body.
+
+#3.14 Pseudo Selectors part One 
+
+pseudo selector
+좀더 세부적으로 엘리먼트를 선택해 주는 것!
+(기존 방법 : 태그, id w/#, class w/.)
+
+선택의 복잡한 과정을 pseudo selector로 가능함
+ex>
+div:first-child {
+background-color: tomato;
+}
+
+/* pseudo selector */
+div:last-child {
+background-color: teal;
+}
+id나 class를 따로 만드는것보다 이렇게 지정하는게 훨씬 좋은 방법이다.
+css에서만 선택을 하면 되니까! html코드를 고칠 필요가 없기 때문이다
+
+n번째 태그 수정하기 nth-child(n) 올ㅋ
+span:nth-child(2) {
+background-color: teal;
+}
+span:nth-child(even) { //or odd ( 홀수 )
+background-color: teal;
+}
+
+even은 짝수! 짝수번째를 모두 바꿀 수있다 오 so cool !
+
+
+span:nth-child(5n + 1) {
+background-color: silver;
+}
+n을 사용하면 매우 편하다
+
+#3.15 Combinators
+
+div의 바로 밑 자식에서 span을 찾아서 그것만 효과를 주는 방법
+1)
+div span {
+text-decoration : underline;
+}
+이렇게하면 div밑에 있는 모든 span이 효과를 가진다
+직접적인 부모가 아니어도 밑에있는 것들을 모두 css가 찾는다.
+
+2) div > span {
+text-decoration : underline;
+}
+이렇게하면 바로 밑!!! 을 찾게 되므로 바로 밑의 자식만 건들일수있게된다.
+
+형제에게 효과를 주는방법
+
+p + span {
+color: black;
+
+}
++ 를 사용하면 형제에게 영향을 끼칠 수 있다. cool
+
+
+※ > 를 사용하면 direct child를 찾고, + 를 사용하면 바로 코드상 밑에 있는 sibling(형제)을 찾게된다.
+
+
+두잇 웹개발 표준 html 부분
+4강 웹문서에 다양한 내용 입력하기
+
+
+두잇 자바스크립트
+1~2
+
+자바스크립트 소스를 작설할 때 지켜야 할 규칙
+
+	1. 대소문자를 구별해야한다. ex) sum, SUM, Sum 셋 다 다름
+	2. 읽기 쉽게 들여 쓰는 습관을 들인다 : 자바스크립트 해석기가 읽을때는 상관 없지만 본인이나 다른 사람이 읽기 편하게 하기 위해서 사용하는 습관을 길러야한다.
+	3. 세미클론으로 문장을 구분한다 : 이 역시 사용을 안해도 큰 지장은 없지만 읽기 편하게 하기 위해서 자바스크립트 문장 끝에는 사용하자
+	4. 자바스크립트 소스에 메모를 할려면 주석을 활용하자 ex) 한줄 주석 : //내용   여러 줄 주석 : /*  내용 */
+	5. 식별자는 정해진 규칙을 지켜 작성한다. 식별자의 첫 글자는 반드시 영문자나 밑줄(_), 또는 달러기호($)로 시작하고 그 뒤에는 영문자나 밑줄, 달러 기호, 숫자 사용 가능   두 단어를 하나의 식별자로 만들 경우 단어 사이에 공백은 안되고 단어와 단어 사이를 하이픈(-)or 밑줄(_) 하거나 낙타표기법을 사용해야합니다ex)checkTime
+
+
+
+
+
+
+
+
