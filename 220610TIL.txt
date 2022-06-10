@@ -1,0 +1,202 @@
+노마드코더 코코아톡 클론 코딩 강의
+
+#3.16 Pseudo Selectors part Two
+
+- "~"는 span이 p의 형제인데, 바로 뒤에 오지 않을 때 쓸 수 있다.
+- Attribute selectors 특성 선택자
+- 그냥 input과 required input이 있다면, input:required{}를 통해서, required input에만 속성을 적용시킬 수 있다.
+- input{} 을 통해, [input 이름]에 해당하는 input 속성을 따로 줄 수 있다.
+- 여기서, input[placeholder="First name"]은 First name에만 속성을 주지만, input[placeholder~="name"]은 name이 들어가는 모든 input에 속성을 부여할 수 있다.
+- "~="은 name을 포함하고 있다는 의미가 되는 것이다.
+- a[href$=".org"] → "$="는 ".org"로 끝나는 모든 anchor를 선택할 수 있다.
+- attribute selectors를 이용하면, class를 지정할 필요 없이 CSS만으로 각각의 속성을 부여해줄 수 있다.
+
+#3.17 States
+Active, hover, focus, focus-within, visited
+
+active 해당 요소를 마우스로 클릭했을 때 효과를 적용
+
+hover 마우스가 해당 요소 위를 지나갈 때 효과를 적용
+
+focus 키보드로 선택되었을 때 효과를 적용
+
+focus-within 부모 요소에게 적용. 자신의 자식 요소 중 하나가 focused되었을 때 효과를 적용
+
+visited 방문한 사이트일 경우에 효과를 적용
+
+조건을 나열해 여러 상황을 설정할 수 있음.
+예 high-tag:hover low-tag:focus{
+
+}
+인 경우, 상위 요소위에 마우스 커서가 있고, 하위 요소가 focused되었을 때 효과를 적용하게 된다.
+
+and 의 개념으로 받아드리면 될 것 같다.
+
+#3.18 Recap
+
+본 영상에서 앞 부분에 잠깐 나온 pseudo element들은 :(콜론)이 2개인 게 특징입니다.
+1) :: placeholder (0:46)
+: placeholder의 특성만 바꾸고 싶을 때 사용합니다.
+
+2) :: selection (1:31)
+: 클릭해서 긁을 때(1:58) 발생합니다.
+
+3) :: first-letter
+: 첫 글자에만 적용됩니다.
+
+4) ::first-line
+: 첫 줄에만 작용합니다.
+
+
+* 11.17 States 복습 내용
+1) active
+: 클릭할 때 작동 (예: 버튼 클릭 시 색깔 변함)
+
+2) hover
+: 마우스 커서를 올려놓으면 작동 (예: 글자 위에 마우스 커서 올려두면 색상 변함)
+
+3) focus
+: element가 focused된 상태. 3:50 보시면 키보드 탭 버튼으로 이동하면서 생기는 그 모양을 보시면 될 것 같아요.
+
+4) visited
+: 방문한 사이트와 관련하여 일어납니다. (예: 애플 링크 눌러서 방문했는데, 다시 보니 해당 링크 색상이 빨강색으로 바뀌어 있음)
+
+5) focus-within
+: focus되는 children이 있으면 작동. mozilla에서 가져온 예시를 들어보겠습니다.
+div: focus-within {background-color: cyan}이면, div의 children이 focus 될 때 {}가 작동합니다.
+
+* form: hover input: focus{} 의 경우엔 두 조건 모두 만족해야 {} 안이 실행됩니다.
+#combinator
+p span{} 부모자식관계
+p>span{} 부모와 바로 밑 자식관계
+p+span{} 바로 다음에 오는 형제관계
+p~span{} 바로 다음에 오지 않아도 되는 형제관계
+
+#attribute
+input[type="word"]{} type="word"인 input만을 선택
+input[type~="word"]{} "word"를 포함하는 input선택
+input[type$="word"]{} 끝에 "word"가 오는 input 선택
+input[type^="word"]{} 앞에 "word"가 오는 input 선택
+
+#state
+:hover 커서가 올라간상태
+:active 클릭할때
+:focus 키보드로 선택한경우
+:visited link에서 쓰이고 사이트를 방문한 이력이 있을경우
+:focus-within 자식들중 하나라도 focus상태에 있다면 부모가 바뀔때 쓰임
+
+#pseudo element
+::placeholder placehoder만을 꾸밀때 사용
+::selection 드래그 했을때
+::first-letter 앞 글자에
+::first-line 첫 줄
+
+#3.19 Colors and Variables
+
+Color
+color는 정말 css 에서중요하다
+css에서 알아야할 color system
+1) hexadecimal color (16진수 컬러)
+#000000 <
+2)RGB 방식
+-> 이건 디자이너들이 많이쓴다
+rgb(252,206,0); 이런식
+rgba (205,23,0, 0.5);
+4번째 숫자는 투명도를 말한다 !
+a 즉 알파는 투명도를 말하는 것이다
+
+Variable (custom properties )
+
+variable도 정말 중요하다 !!!
+이게 css를 프로그래밍언어처럼 보여준다
+프로그래밍언어는아니지만 그 장점을 보여주는것임
+
+:root 라는 엘리먼트에 변수를 추가하는 것이다
+:root은 기본적으로 모든 document의 뿌리가 되는 것이다
+출발점이 되는 것이다
+여기에 변수이름을 쓰고
+--main-color라고 변수이름을 주고
+이것을 document의 root에 저장하는것이다
+
+--를 써주고 변수이름을 써줘야한다
+변수는 -- 2개 그리고 변수이름
+빈공간이 있다면 -로 채워야한다.
+물론 컬러만 저장할 수 있는게 아니다!
+--default-border: 1px solde var(--main-color);
+
+
+그 다음 이 변수를 사용할 곳에
+p {
+background-color: var(--main-color);
+}
+a {
+background-color: var(--main-color);
+}
+이렇게 써주면됨!!
+
+#4.0 Transitions 
+
+transition
+어떤 상태에서 다른 상태로의 변화! 를 보내주는 애니매이션이다
+
+rule1: transtion은 state가 없는 요소에 붙어야한다
+처음 생긴곳에 있어야한다
+state에 transition을 준다면 변화를 준것(예를들면 hover라면 마우스를 갖다 댄것)을 그만할경우(마우스를 뗄경우)
+원래상태로 바로 돌아간다
+rule2: transtion 에 변화를 준것들은 state에 들어있는것들이 기준이 되어 바뀌는것이다
+바뀌는 것들에 한정하여 transition 이 일어날 수 있다
+
+
+
+
+두잇 웹개발 표준 html 부분
+5강 입력 양식 작성하기
+
+
+두잇 자바스크립트
+3-1 변수란 무엇일까
+변수 선언하는 규칙
+	1. 이름은 의미 있게 짓는다.
+	2. 여러 단어를 연결한 변수 이름은 낙타 모양으로 만든다.
+	3. 선언할수 없는 이름도 있다. 
+	ex) let 1value  let .key   let #obj
+	
+	
+	3-2 자료형 이해하기
+	자료형을 확인하는 방법 - typeof 연산자
+	
+	숫자형(number)-정수 : 소수점 없는 숫자
+	숫자형(number)-실수 : 소수점 있는 숫자
+	둘 다 typeof 연산자로 확인해보면 number로 취급
+	
+	문자형(string) : 작은 따옴표나 큰따옴표로 표시
+	"2000" 이렇게 숫자를 써도 따옴표로 묶어주면 문자형으로 인식함
+	
+	논리형(Boolean) : 참(True)과 거짓(False) 값을 표현하는 자료형
+	
+	값을 초기화 할때 null을 많이 사용함
+	
+	
+	배열이란
+	ex) let seasons = ["봄", "여름", "가을", "겨울"];
+	배열에 저장할 자료를 쉼표로 구분해서 대괄호로 묶으면 배열을 선언할 수 있다.
+	
+	빈 배열도 선언 가능하다. ex) let addValue = [];
+	
+	객체(Object)란
+	ex) let kim = {
+	firstName: "John",
+	lastName: "Kim",
+	age: 35,
+	address: "Seoul"
+	}
+	객체는 여러자료를 중괄호로 묶을 수 있다. 배열과 비슷하지만 키(key)와 값(value)을 콜론(:)을 사용하여 한 쌍으로 짝지어야한다.
+	위 예제에서 키는 firstName 이고 값은 "John" 이다.
+	
+	
+	
+
+
+
+
+
