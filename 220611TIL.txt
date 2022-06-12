@@ -1,0 +1,92 @@
+코코아톡 챌린지
+• 오늘의 강의: 코코아 클론코딩 3.6 - 3.11
+• 오늘의 과제: 위의 강의를 시청하신 후, 아래 코드 챌린지를 제출하세요.
+• 제출기간: 익일 오전 6시까지
+
+
+
+TA's 힌트
+	1. flex
+	• 가운데 정렬을 비롯한 대부분의 정렬은 flex를 통해 구현할 수 있습니다.
+	• 특히 여러 컨텐츠를 가로 혹은 세로 방향으로 일정 간격으로 배치하고 싶다면 더욱 적합할 것입니다.
+	• flex는 방향(direction)에 따라 메인 축(main-axis)과 교차 축(cross-axis)이 의미하는 바가 다릅니다.
+	• 구현하고자 하는 컨텐츠의 방향이 가로인지, 세로인지 잘 판단해서 작성하시기 바랍니다.
+	• flex-direction에 대해 알아보세요.
+	2. class
+	• 하나의 요소에 한 개 이상의 class를 설정할 수 있습니다.
+	• 하나의 class가 하나의 스타일을 갖는다면, 두 개의 class를 가진 요소는 두 가지의 스타일이 모두 적용됩니다.
+	3. border
+	• 테두리를 의미하는 border 속성에는 여러 하위 속성이 존재합니다.
+	• 하위 속성들을 이용해 border의 색상, 스타일, 두께 등을 따로 설정할 수 있습니다.
+
+
+내코드
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+  </head>
+  <body>
+    <div class="a">
+      <div class="b"></div>
+      <div class="c"></div>
+      <div class="d"></div>
+    </div>
+  </body>
+</html>
+
+
+CSS
+
+
+body {
+    background-color: tomato;
+    display: flex;
+    justify-content: center;
+    margin: 400px;
+    
+}
+.a {
+    height: 500px;
+    width: 500px;
+    background-color: wheat;
+    border: 3px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+.b {
+    background-color: aqua;
+    height: 100px;
+    width: 100px;
+    border: 2px solid white;
+}
+.c {
+background-color: aqua;
+height: 100px;
+width: 350px;
+border: 2px dashed white;
+}
+.d {
+    background-color: aqua;
+    height: 100px;
+    width: 100px;
+    border: 2px solid white;
+}
+
+
+출처: <https://nomadcoders.co/c/kokoa-challenge/lobby> 
+
+
+
+
+출처: <https://nomadcoders.co/c/kokoa-challenge/lobby> 
+
+
